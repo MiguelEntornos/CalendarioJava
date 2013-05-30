@@ -253,6 +253,10 @@ public class Calendario extends JDialog {
 	@Override
 	public String toString() {
 		SimpleDateFormat f = new SimpleDateFormat("dd/MM/yyyy");
-		return f.format(getValue().getTime());
+                Calendar r = getValue();
+                if(r != null) {
+                    return f.format(getValue().getTime());
+                }
+                return null;
 	}
 }
