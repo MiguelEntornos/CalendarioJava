@@ -51,13 +51,18 @@ public class Calendario extends JDialog {
 	private PersonalizaCalendario rend;
 	private FeriadosAno feriados;
 
-	public Calendario(Frame frame, boolean visible) {
+        /**
+         * 
+         * @param frame
+         * @param visible 
+         */
+	public Calendario(Frame frame) {
 		super(frame, true);
 		this.calendar = Calendar.getInstance();
-		init(visible);
+		init();
 	}
 	
-	private void init(boolean visible) {
+	private void init() {
 		setTitle("Calend�rio 1.0");
 		getContentPane().setLayout(new BorderLayout(5,5));
 		UIManager.put("ToolTip.foreground", new ColorUIResource(new Color(255, 137, 0)));
@@ -112,7 +117,6 @@ public class Calendario extends JDialog {
 		//calendar.set(Calendar.MONTH, mes.getSelectedIndex());
 		changeDate(mes.getSelectedIndex(), (Integer) ano.getValue());
 	
-		setVisible(visible);
 	}
 	/**
 	 * M�todo que muda o m�s do calend�rio

@@ -18,7 +18,7 @@ public class NovoFeriadosAno {
 			String s = "";
 			while(s != null) {
 				@SuppressWarnings("serial")
-				Calendario c = new Calendario(f, true) {
+				Calendario c = new Calendario(f) {
 					@SuppressWarnings("unused")
 					public void onChangeDate(int month, int year) {
 						if(year == ano) {
@@ -32,6 +32,7 @@ public class NovoFeriadosAno {
 						feriados.setFeriado(month, day, r);
 					}
 				};
+                                c.setVisible(true);
 				s = c.toString();
 				JOptionPane.showMessageDialog(f, "Salvando "+s);
 			}
